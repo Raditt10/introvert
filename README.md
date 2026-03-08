@@ -12,10 +12,11 @@
 
 ## 📸 Preview
 
-<p>
-  <img src="screenshot/landing_page.png" width="420" alt="Landing Page" />
-  <img src="screenshot/bab1.png" width="420" alt="Halaman Bab" />
-</p>
+<div align="center">
+  <img src="screenshot/landing_page.png" width="380" alt="Landing Page" />&nbsp;&nbsp;&nbsp;&nbsp;<img src="screenshot/bab1.png" width="380" alt="Halaman Bab" />
+  <br/><br/>
+  <sup>Landing Page &nbsp;·&nbsp; Halaman Bab</sup>
+</div>
 
 ## 📌 Deskripsi Project
 

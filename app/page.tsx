@@ -5,7 +5,7 @@ import Main from '@/components/Main';
 
 // Dynamically import Scene so Three.js only runs on client
 const Scene = dynamic(() => import('@/components/Scene'), { ssr: false });
-const AnimeBackground = dynamic(() => import('@/components/AnimeBackground'), { ssr: false });
+const AnimeBackground = dynamic(() => import('@/components/Background'), { ssr: false });
 
 export default function Home() {
   return (

@@ -382,8 +382,8 @@ export default function Overlay() {
           <section
             key={i}
             id={`phase-${s.phase}`}
-            className="section-block relative w-full flex items-center px-6 md:px-16 overflow-hidden"
-            style={{ minHeight: '120vh' }} // Increased height for more scrolling room
+            className="section-block relative w-full flex items-center px-4 sm:px-6 md:px-16 overflow-hidden"
+            style={{ minHeight: '100dvh' }}
           >
             {/* Floating kanji (anime.js) */}
             {s.floatKanji.map((k, ki) => (
@@ -411,7 +411,7 @@ export default function Overlay() {
                 ${isCentered ? 'items-center text-center' : isLeft ? 'items-start text-left mr-auto' : 'items-end text-right ml-auto'}
               `}
             >
-              <div className={`max-w-xl md:max-w-3xl lg:max-w-5xl ${!isCentered && 'glass p-8 md:p-12'}`}>
+              <div className={`max-w-xl md:max-w-3xl lg:max-w-5xl ${!isCentered && 'glass p-5 sm:p-8 md:p-12'}`}>
                 
                 {/* Phase & Tag Row */}
                 <div
@@ -432,10 +432,10 @@ export default function Overlay() {
 
                 {/* HUGE Title — character split */}
                 <h2
-                  className={`font-heading text-6xl md:text-8xl lg:text-[8rem] xl:text-[9rem] font-black mb-4 leading-[0.85] tracking-tighter ${s.gradientClass} whitespace-nowrap`}
+                  className={`font-heading text-4xl sm:text-5xl md:text-7xl lg:text-[8rem] xl:text-[9rem] font-black mb-4 leading-[0.85] tracking-tighter ${s.gradientClass}`}
                   aria-label={s.title}
                   style={{
-                    paddingBottom: '0.2em', // Prevent clipping of low hanging letters
+                    paddingBottom: '0.2em',
                     marginBottom: '-0.1em'
                   }}
                 >
@@ -443,7 +443,7 @@ export default function Overlay() {
                 </h2>
 
                 {/* Subtitle */}
-                <p className="txt-meta text-base md:text-xl lg:text-3xl text-slate-300 font-light tracking-tight mb-8 opacity-0">
+                <p className="txt-meta text-sm sm:text-base md:text-xl lg:text-3xl text-slate-300 font-light tracking-tight mb-6 sm:mb-8 opacity-0">
                   {s.subtitle}
                 </p>
 
@@ -528,7 +528,7 @@ export default function Overlay() {
 
             {/* Scroll hint (only first section) */}
             {i === 0 && (
-              <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-60">
+              <div className="absolute bottom-6 sm:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 sm:gap-3 opacity-60">
                 <span className="text-xs font-mono tracking-[0.4em] text-slate-400 uppercase">Scroll to Evolve</span>
                 <div className="w-[2px] h-16 bg-gradient-to-b from-white via-slate-500 to-transparent animate-pulse rounded-full" />
               </div>
@@ -538,7 +538,7 @@ export default function Overlay() {
       })}
 
       {/* ── Ruang Cerita (User Stories Section) ── */}
-      <section id="phase-05" className="section-block relative w-full min-h-[120vh] flex items-center px-6 md:px-16 overflow-hidden z-10 pointer-events-auto">
+      <section id="phase-05" className="section-block relative w-full min-h-[100dvh] flex items-center px-4 sm:px-6 md:px-16 overflow-hidden z-10 pointer-events-auto">
         {/* Floating kanji specific to Phase 5 */}
         <span
           className="kanji-float absolute pointer-events-none font-bold opacity-5"
@@ -561,10 +561,10 @@ export default function Overlay() {
           }}
         >声</span>
 
-        <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-16 relative z-10">
+        <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-12 lg:gap-16 relative z-10">
           
           {/* Left: Card Stack */}
-          <div className="w-full lg:w-1/2 flex justify-center lg:justify-start relative min-h-[450px]">
+          <div className="w-full lg:w-1/2 flex justify-center lg:justify-start relative min-h-[320px] sm:min-h-[400px] lg:min-h-[450px]">
             <StoryStack />
           </div>
 
@@ -581,7 +581,7 @@ export default function Overlay() {
                 </span>
               </div>
 
-              <h2 className="font-heading text-6xl md:text-8xl lg:text-[7rem] xl:text-[8rem] font-black mb-4 leading-[0.85] tracking-tighter text-gradient-hero flex flex-col items-end">
+              <h2 className="font-heading text-4xl sm:text-5xl md:text-7xl lg:text-[7rem] xl:text-[8rem] font-black mb-4 leading-[0.85] tracking-tighter text-gradient-hero flex flex-col items-end">
                 <div className="flex whitespace-nowrap">
                   {'Suara'.split('').map((char, index) => (
                     <span key={`s-${index}`} className="char-title inline-block opacity-0">
@@ -598,14 +598,14 @@ export default function Overlay() {
                 </div>
               </h2>
 
-              <p className="txt-meta opacity-0 text-base md:text-xl lg:text-3xl text-slate-300 font-light tracking-tight mb-8">
+              <p className="txt-meta opacity-0 text-sm sm:text-base md:text-xl lg:text-3xl text-slate-300 font-light tracking-tight mb-6 sm:mb-8">
                 Bab V · Gema dalam keheningan
               </p>
 
               <div className="txt-meta opacity-0 h-px w-16 mb-6 bg-slate-700" style={{ marginLeft: 'auto' }} />
 
               <p 
-                className="text-sm md:text-base text-slate-300 leading-relaxed max-w-lg ml-auto mb-10 text-right"
+                className="text-xs sm:text-sm md:text-base text-slate-300 leading-relaxed max-w-lg ml-auto mb-8 sm:mb-10 text-right"
                 aria-label="Setiap introvert memiliki perjalanan keheningannya sendiri. Baca kisah mereka yang menemukan kekuatan dalam kesunyian, dan geser kartu untuk mendengar lebih banyak. Anda tidak sendirian."
               >
                 <SplitText text="Setiap introvert memiliki perjalanan keheningannya sendiri. Baca kisah mereka yang menemukan kekuatan dalam kesunyian, dan geser kartu untuk mendengar lebih banyak. Anda tidak sendirian." charClass="char-body" />
@@ -613,13 +613,13 @@ export default function Overlay() {
 
               <div className="txt-cta opacity-0 flex flex-col items-end gap-4 mt-2">
                 <p className="text-xs font-mono tracking-[0.3em] text-slate-500 uppercase mb-1">Bagikan Cerita Anda</p>
-                <div className="flex gap-3">
+                <div className="flex flex-col sm:flex-row gap-3">
                   {/* WhatsApp */}
                   <a
                     href="https://wa.me/6289661916855?text=Halo%2C%20saya%20ingin%20berbagi%20cerita%20introvert%20saya..."
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-3 px-6 py-3 rounded-full border border-emerald-500/30 bg-emerald-500/5 text-emerald-400 hover:bg-emerald-500/15 hover:border-emerald-400/60 backdrop-blur-sm transition-all duration-300 hover:scale-105 active:scale-95"
+                    className="group flex items-center justify-center gap-3 px-5 sm:px-6 py-3 rounded-full border border-emerald-500/30 bg-emerald-500/5 text-emerald-400 hover:bg-emerald-500/15 hover:border-emerald-400/60 backdrop-blur-sm transition-all duration-300 hover:scale-105 active:scale-95"
                   >
                     <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
@@ -629,7 +629,7 @@ export default function Overlay() {
                   {/* Email */}
                   <a
                     href="mailto:iniakuraditt@gmail.com?subject=Cerita%20Introvert%20Saya&body=Halo%2C%20saya%20ingin%20berbagi%20cerita%20introvert%20saya..."
-                    className="group flex items-center gap-3 px-6 py-3 rounded-full border border-blue-500/30 bg-blue-500/5 text-blue-400 hover:bg-blue-500/15 hover:border-blue-400/60 backdrop-blur-sm transition-all duration-300 hover:scale-105 active:scale-95"
+                    className="group flex items-center justify-center gap-3 px-5 sm:px-6 py-3 rounded-full border border-blue-500/30 bg-blue-500/5 text-blue-400 hover:bg-blue-500/15 hover:border-blue-400/60 backdrop-blur-sm transition-all duration-300 hover:scale-105 active:scale-95"
                   >
                     <svg className="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
@@ -645,11 +645,11 @@ export default function Overlay() {
       </section>
 
       {/* ── Footer Sederhana & Elegan ── */}
-      <footer className="footer-wrap relative w-full px-6 md:px-16 py-8 md:py-12 border-t border-slate-800/50 bg-slate-950/30 backdrop-blur-sm overflow-hidden z-20 pointer-events-auto">
+      <footer className="footer-wrap relative w-full px-4 sm:px-6 md:px-16 py-6 sm:py-8 md:py-12 border-t border-slate-800/50 bg-slate-950/30 backdrop-blur-sm overflow-hidden z-20 pointer-events-auto">
         {/* Subtle top gradient line */}
         <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-slate-700 to-transparent opacity-50"></div>
         
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 pointer-events-none">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-5 sm:gap-8 pointer-events-none">
           <div className="flex flex-col items-center md:items-start gap-1">
             <h3 className="footer-logo font-heading tracking-widest text-lg md:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-200 to-slate-500 uppercase opacity-0">Sang Introvert</h3>
             <p className="footer-desc text-[10px] md:text-xs text-slate-500 font-mono tracking-[0.3em] uppercase opacity-0">Menemukan suara dalam jeda.</p>
@@ -804,19 +804,19 @@ function StoryStack() {
   }, [cards]); // Needs to re-trigger or hold reference (though handleNext recreates, it accesses newest context indirectly through functional update)
 
   return (
-    <div ref={containerRef} className="relative w-full max-w-md ml-0 lg:ml-24" style={{ minHeight: '350px' }}>
+    <div ref={containerRef} className="relative w-full max-w-sm sm:max-w-md ml-0 lg:ml-24" style={{ minHeight: '300px' }}>
        {cards.map((story: typeof MOCK_STORIES[0], i: number) => (
          <div 
            key={story.id} 
-           className="story-card absolute top-0 left-0 w-full glass bg-slate-900/90 backdrop-blur-2xl p-8 md:p-10 flex flex-col cursor-pointer transition-shadow hover:shadow-[0_0_30px_rgba(75,137,220,0.2)] select-none"
+           className="story-card absolute top-0 left-0 w-full glass bg-slate-900/90 backdrop-blur-2xl p-6 sm:p-8 md:p-10 flex flex-col cursor-pointer transition-shadow hover:shadow-[0_0_30px_rgba(75,137,220,0.2)] select-none"
            onClick={handleNext}
-           style={{ minHeight: '350px' }}
+           style={{ minHeight: '300px' }}
          >
            <p className="text-slate-300 text-sm md:text-base leading-relaxed mb-8 flex-grow italic">
              "{story.text}"
            </p>
            <div className="flex items-center gap-4 mt-auto">
-             <div className="w-12 h-12 shrink-0 rounded-full bg-slate-800 flex items-center justify-center font-bold text-slate-400 text-lg shadow-inner">
+             <div className="w-10 h-10 sm:w-12 sm:h-12 shrink-0 rounded-full bg-slate-800 flex items-center justify-center font-bold text-slate-400 text-base sm:text-lg shadow-inner">
                {story.initial}
              </div>
              <div>

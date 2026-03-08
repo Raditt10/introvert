@@ -9,7 +9,7 @@ const CHARACTERS = [
     style: {
       left: '-3vw',
       top: '4%',
-      width: 'clamp(240px, 26vw, 420px)',
+      width: 'clamp(180px, 22vw, 420px)',
     },
     fromSide: 'left',
   },
@@ -19,7 +19,7 @@ const CHARACTERS = [
     style: {
       right: '-3vw',
       top: '26%',
-      width: 'clamp(240px, 26vw, 420px)',
+      width: 'clamp(180px, 22vw, 420px)',
     },
     fromSide: 'right',
   },
@@ -29,7 +29,7 @@ const CHARACTERS = [
     style: {
       left: '-3vw',
       top: '50%',
-      width: 'clamp(240px, 26vw, 420px)',
+      width: 'clamp(180px, 22vw, 420px)',
     },
     fromSide: 'left',
   },
@@ -39,7 +39,7 @@ const CHARACTERS = [
     style: {
       right: '-3vw',
       top: '72%',
-      width: 'clamp(230px, 25vw, 400px)',
+      width: 'clamp(170px, 21vw, 400px)',
     },
     fromSide: 'right',
   },
@@ -100,7 +100,7 @@ export default function AnimeBackground() {
 
   return (
     <div
-      className="fixed inset-0 z-[1] pointer-events-none overflow-hidden"
+      className="fixed inset-0 z-[1] pointer-events-none overflow-hidden hidden md:block"
       aria-hidden="true"
     >
       {CHARACTERS.map((char, i) => (

@@ -9,7 +9,7 @@ const AnimeBackground = dynamic(() => import('@/components/Background'), { ssr: 
 
 export default function Home() {
   return (
-    <main className="relative" style={{ height: '400vh' }}>
+    <main className="relative min-h-[400vh]">
       {/* Fixed 3D Canvas – sits behind everything */}
       <div className="fixed inset-0 z-0">
         <Scene />

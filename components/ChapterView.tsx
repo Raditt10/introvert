@@ -184,7 +184,7 @@ export default function ChapterView({ chapter }: { chapter: Chapter }) {
 
       {/* Top navigation bar */}
       <nav className="sticky top-0 z-50 backdrop-blur-xl bg-[#0a0f1e]/80 border-b border-slate-800/50">
-        <div className="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
           <button
             onClick={() => router.push('/')}
             className="flex items-center gap-2 text-xs font-mono tracking-widest text-slate-500 hover:text-white transition-colors uppercase group"
@@ -200,12 +200,12 @@ export default function ChapterView({ chapter }: { chapter: Chapter }) {
           </span>
 
           {/* Chapter navigation dots */}
-          <div className="flex gap-2">
+          <div className="flex gap-2.5 sm:gap-2">
             {[1, 2, 3, 4].map((id) => (
               <button
                 key={id}
                 onClick={() => goToChapter(id)}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                className={`w-3 h-3 sm:w-2 sm:h-2 rounded-full transition-all duration-300 ${
                   id === chapter.id
                     ? 'bg-blue-400 scale-125'
                     : 'bg-slate-700 hover:bg-slate-500'
@@ -218,14 +218,14 @@ export default function ChapterView({ chapter }: { chapter: Chapter }) {
       </nav>
 
       {/* Chapter header */}
-      <header className="relative z-10 pt-16 md:pt-24 pb-12 px-6">
+      <header className="relative z-10 pt-12 sm:pt-16 md:pt-24 pb-8 sm:pb-12 px-4 sm:px-6">
         <div className="max-w-3xl mx-auto">
           <div className="chapter-entrance opacity-0 translate-y-8 animate-chapter-fade-in">
             <span className="font-mono text-[10px] tracking-[0.5em] text-slate-600 uppercase block mb-4">
               {chapter.subtitle}
             </span>
             <h1
-              className={`font-heading text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.85] mb-6 ${chapter.gradientClass}`}
+              className={`font-heading text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.85] mb-6 ${chapter.gradientClass}`}
             >
               {chapter.title}
             </h1>
@@ -253,7 +253,7 @@ export default function ChapterView({ chapter }: { chapter: Chapter }) {
 
       {/* Novel content */}
       {showContent && (
-        <main className="relative z-10 px-6 pb-32">
+        <main className="relative z-10 px-4 sm:px-6 pb-24 sm:pb-32">
           <div ref={contentRef} className="max-w-3xl mx-auto animate-chapter-fade-in opacity-0">
             {/* Page texture line */}
             <div className="w-full h-px bg-gradient-to-r from-transparent via-slate-800 to-transparent mb-12" />
@@ -270,7 +270,7 @@ export default function ChapterView({ chapter }: { chapter: Chapter }) {
 
             {/* Skip all button */}
             {!allDone && showContent && (
-              <div className="fixed bottom-8 right-8 z-50">
+              <div className="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 z-50">
                 <button
                   onClick={() => {
                     setCurrentParagraph(chapter.paragraphs.length);
@@ -289,7 +289,7 @@ export default function ChapterView({ chapter }: { chapter: Chapter }) {
                 <div className="w-full h-px bg-gradient-to-r from-transparent via-slate-800 to-transparent mb-12" />
 
                 {/* Source info card */}
-                <div className="glass p-8 md:p-10 mb-10">
+                <div className="glass p-5 sm:p-8 md:p-10 mb-10">
                   <h3 className="font-heading text-lg font-bold text-slate-200 mb-6 tracking-tight flex items-center gap-3">
                     <svg className="w-5 h-5 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
@@ -349,16 +349,16 @@ export default function ChapterView({ chapter }: { chapter: Chapter }) {
                 )}
 
                 {/* Chapter navigation */}
-                <div className="mt-16 flex items-center justify-between">
+                <div className="mt-12 sm:mt-16 flex flex-col sm:flex-row items-center sm:items-center justify-between gap-4">
                   {chapter.id > 1 ? (
                     <button
                       onClick={() => goToChapter(chapter.id - 1)}
-                      className="group flex items-center gap-3 text-sm text-slate-500 hover:text-white transition-colors"
+                      className="group flex items-center gap-2 sm:gap-3 text-sm text-slate-500 hover:text-white transition-colors"
                     >
                       <svg className="w-5 h-5 transition-transform group-hover:-translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                       </svg>
-                      <span className="font-mono text-xs tracking-widest uppercase">Bab Sebelumnya</span>
+                      <span className="font-mono text-[10px] sm:text-xs tracking-widest uppercase">Bab Sebelumnya</span>
                     </button>
                   ) : (
                     <div />
@@ -367,9 +367,9 @@ export default function ChapterView({ chapter }: { chapter: Chapter }) {
                   {chapter.id < 4 ? (
                     <button
                       onClick={() => goToChapter(chapter.id + 1)}
-                      className="group flex items-center gap-3 text-sm text-slate-500 hover:text-white transition-colors"
+                      className="group flex items-center gap-2 sm:gap-3 text-sm text-slate-500 hover:text-white transition-colors"
                     >
-                      <span className="font-mono text-xs tracking-widest uppercase">Bab Selanjutnya</span>
+                      <span className="font-mono text-[10px] sm:text-xs tracking-widest uppercase">Bab Selanjutnya</span>
                       <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                       </svg>
@@ -377,9 +377,9 @@ export default function ChapterView({ chapter }: { chapter: Chapter }) {
                   ) : (
                     <button
                       onClick={() => router.push('/')}
-                      className="group flex items-center gap-3 text-sm text-slate-500 hover:text-white transition-colors"
+                      className="group flex items-center gap-2 sm:gap-3 text-sm text-slate-500 hover:text-white transition-colors"
                     >
-                      <span className="font-mono text-xs tracking-widest uppercase">Kembali ke Beranda</span>
+                      <span className="font-mono text-[10px] sm:text-xs tracking-widest uppercase">Kembali ke Beranda</span>
                       <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0h4" />
                       </svg>
